@@ -1,106 +1,104 @@
-import React from "react";
-import {StyleSheet,View,TouchableOpacity,Text} from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, View, Text,TouchableOpacity, ScrollView } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function Cards(){
-    return(
-      <View style = {styles.Cards}>
-        <View style = {styles.card1}>
-          <View style = {styles.cardHeader}>
-            <TouchableOpacity style = {styles.iconWrite}>
-              <Octicons name="pencil" size={30} color="black" />
-            </TouchableOpacity>
-            <Text style = {styles.cardName}>
-                Write Prescription
-            </Text>
-            <Text style = {styles.cardDesc}>
-                To patient
-            </Text>
-          </View>
+export default function Cards() {
+  
+    return (
           
-          <View style = {styles.cardAction}>
-            <Text style = {styles.cardType}>
-               TEMPLATE
-            </Text>
-            <TouchableOpacity style = {styles.iconNext}>
-               <AntDesign name="arrowright" size={24} color="white" />
-            </TouchableOpacity>
+            <View style={styles.Card}>
+              <View style={styles.CardHeader1}>
+                <TouchableOpacity style={styles.Icon}>
+                  <MaterialCommunityIcons name="pencil-circle" size={35} color="white" />
+                </TouchableOpacity>
+                <Text style={styles.CardName}>
+                  Write Prescription
+                </Text>
+                <Text style={styles.CardDesc}>
+                  to patient
+                </Text>
+                <View style={styles.CardsAction}>
+                  <Text style={styles.CardType}>TEMPLATE</Text>
+                  <TouchableOpacity style={styles.IconAct}>
+                    <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                  </TouchableOpacity>
+              </View>
+            </View>
+            {/* end CardHeader */}
+
+            {/* start CardsAction */}
+           
+          <View style={styles.CardHeader2}>
+              <TouchableOpacity style={styles.Icon}>
+              <MaterialCommunityIcons name="pencil-circle" size={35} color="white" />
+              </TouchableOpacity>
+              <Text style={styles.CardName}>
+                Lorem
+              </Text>
+              <Text style={styles.CardDesc}>
+                Continue to fill patient profile
+              </Text>
+               {/* start CardsAction */}
+            <View style={styles.CardsAction}>
+                <Text style={styles.CardType}>REMINDER</Text>
+                <TouchableOpacity style={styles.IconAct}>
+                <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                </TouchableOpacity>
+            </View>
           </View>
-        </View> 
-        <View style = {styles.card2}>
-          <View style = {styles.cardHeader}>
-            <TouchableOpacity style = {styles.iconWrite}>
-              <Octicons name="pencil" size={30} color="black" />
-            </TouchableOpacity>
-            <Text style = {styles.cardName}>
-                Anna jonhson
-            </Text>
-            <Text style = {styles.cardDesc}>
-                Continue to fillsdfasdad
-                patient profile
-            </Text>
           </View>
-          
-          <View style = {styles.cardAction}>
-            <Text style = {styles.cardType}>
-               REMINDER
-            </Text>
-            <TouchableOpacity style = {styles.iconNext}>
-               <AntDesign name="arrowright" size={24} color="white" />
-            </TouchableOpacity>
-          </View>
-        </View> 
-      </View> 
-    )
+ 
+    );
 }
 const styles = StyleSheet.create({
-    Cards:{
-     flexDirection:'row',
-     justifyContent:'space-between',
-     
+    Card:{
+      justifyContent:'space-between',
+      flexDirection:'row', 
     },
-    card1: {
-     backgroundColor:'green',
-     borderRadius:27,
-     marginBottom:300,
-     marginTop:30,
-     marginLeft:15,
-     width:280,
-     
-    },
-    card2: {
-      backgroundColor:'blue',
-      borderRadius:27,
+    CardHeader1:{
       marginTop:30,
-      marginBottom:300,
-      marginLeft:15,
-      width:280,
-      
-     },
-    iconWrite:{
-      marginBottom:70,
-      marginLeft:15,
-      
-      
+      marginBottom:20,
+      backgroundColor:'#B0ECAD',
+      marginLeft:25,
+      width:200,
+      borderRadius:15,
+      height: 'auto'
     },
-    cardAction:{
+    CardHeader2:{
+      marginTop:30,
+      marginBottom:20,
+      backgroundColor:'#9AA0FC',
+      marginLeft:25,
+      width:200,
+      borderRadius:15,
+    },
+    CardName:{
+      fontSize:20,
+      fontWeight:'bold',
+      paddingTop:20,
+      paddingLeft:10,
+    },
+    CardDesc:{
+      fontSize:15,
+      paddingTop:3,
+      paddingLeft:10,
+    },
+    CardsAction:{
       justifyContent:'space-between',
       flexDirection:'row',
-      paddingVertical:90,
-      marginLeft:15,
-      marginBottom:50
+      paddingTop:30,
+      paddingLeft:20,
     },
-    cardName:{
-      justifyContent:'center',
-      fontSize:30,
+    CardType:{
+      paddingTop:18,
     },
-    cardHeader:{
-      marginLeft:15,
+    IconAct:{
+      paddingRight:5,
+      paddingTop:8,
     },
-    iconNext:{
-      backgroundColor:'black',
-      borderRadius:40,
-      width:40
+    Icon:{
+      paddingLeft:20,
+      paddingTop:15,
     }
 });

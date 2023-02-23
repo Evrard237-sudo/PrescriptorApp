@@ -1,31 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import TopBar from './Components/TopBar';
-import HomeStat from './Components/HomeStat';
+import HomeStart from './Components/HomeStart';
 import SearchBar from './Components/SearchBar';
-import Cards from './Components/Cards';
-
+import Cards from './Components/Cards'
+import Statistique from './Components/Statistique';
 
 export default function App() {
   return (
-    <View style={{backgroundColor: '#f8f8f8'}}>
-      <TopBar />
-      <HomeStat />
-      <SearchBar />
+    <View style={{backgroundColor: '#f2f2f2'}}>
+      <StatusBar style='auto' />
+      <View style={styles.topBar}>
+        <TopBar />
+      </View>
+      <View style={styles.HomeStart}>
+        <HomeStart />
+      </View>
+      <View>
+        <SearchBar />
+      </View>
       <ScrollView>
-        <Cards style = {styles.Cards} horizontal = {true}/>
+        <Cards />
       </ScrollView>
+      <Statistique />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f2f2f2',
-    alignItems: 'left',
-    justifyContent: 'top',
+  topBar: {
+    marginTop: 28, 
   },
-});
-
-
+  HomeStart: {
+    padding: 0,
+    margin: 0,
+  },
+  SearchBar: {
+    
+  }
+})

@@ -1,36 +1,34 @@
-import React from "react";
-import {StyleSheet,View,TouchableOpacity} from 'react-native';
-import { TextInput } from "react-native";
-import { Octicons } from '@expo/vector-icons';
 
+import React from 'react';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { TextInput } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-export default function SearchBar(){
+export default function SearchBar() {
+
     return (
-        <View style = {styles.searchBar}>
-        <TouchableOpacity style = {styles.iconSearch}>
-          <Octicons name="search" size={30} color="black" />
-        </TouchableOpacity>
-        <TextInput style = {styles.search} placeholder= "Search"/>
-      </View>
+        <View style={styles.searchBar}>
+            <TouchableOpacity style={styles.Icon}><Feather name="search" size={24} color="black" /></TouchableOpacity>
+            <TextInput style = {styles.search} placeholder="search"/>
+        </View>
     );
-    
+  
 }
 const styles = StyleSheet.create({
-    searchBar: {
-     borderColor:'grey',
-     borderWidth:1,
+    searchBar:{
+    marginBottom:10,
+    flexDirection:'row',
+     paddingBottom:5,
+     paddingTop:5,
      marginHorizontal:20,
-     
-     flexDirection:'row',
-     backgroundColor:'white',
      borderRadius:20,
+     backgroundColor:'white',
+     width:330
     },
-    iconSearch:{
-      
+    Icon:{
+        paddingLeft:20,
     },
     search:{
-      marginHorizontal:20,
-      borderRadius:20,
-      borderWidth:0,
+        paddingLeft:10,
     }
 });
