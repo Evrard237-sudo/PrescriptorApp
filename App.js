@@ -19,10 +19,12 @@ export default function App() {
       <View>
         <SearchBar />
       </View>
-      <ScrollView>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <Cards />
       </ScrollView>
-      <Statistique />
+      <View style={styles.Statistique}>
+        <Statistique />
+      </View>
     </View>
   );
 }
@@ -37,5 +39,11 @@ const styles = StyleSheet.create({
   },
   SearchBar: {
     
+  },
+  Statistique: {
+    marginTop: 20,
+    marginLeft: 0,
+    marginRight: 0,
+    marginBottom: 20,
   }
 })

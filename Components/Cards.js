@@ -47,6 +47,25 @@ export default function Cards() {
                 </TouchableOpacity>
             </View>
           </View>
+
+          <View style={styles.CardHeader3}>
+              <TouchableOpacity style={styles.Icon}>
+              <MaterialCommunityIcons name="pencil-circle" size={35} color="white" />
+              </TouchableOpacity>
+              <Text style={styles.CardName}>
+                Lorem
+              </Text>
+              <Text style={styles.CardDesc}>
+                Continue to fill patient profile
+              </Text>
+               {/* start CardsAction */}
+            <View style={styles.CardsAction}>
+                <Text style={styles.CardType}>REMINDER</Text>
+                <TouchableOpacity style={styles.IconAct}>
+                <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                </TouchableOpacity>
+            </View>
+          </View>
           </View>
  
     );
@@ -60,7 +79,7 @@ const styles = StyleSheet.create({
       marginTop:30,
       marginBottom:20,
       backgroundColor:'#B0ECAD',
-      marginLeft:25,
+      marginLeft:10,
       width:200,
       borderRadius:15,
       height: 'auto'
@@ -70,6 +89,15 @@ const styles = StyleSheet.create({
       marginBottom:20,
       backgroundColor:'#9AA0FC',
       marginLeft:25,
+      width:200,
+      borderRadius:15,
+    },
+    CardHeader3: {
+      marginTop:30,
+      marginBottom:20,
+      backgroundColor:'yellow',
+      marginLeft:25,
+      marginRight: 10,
       width:200,
       borderRadius:15,
     },

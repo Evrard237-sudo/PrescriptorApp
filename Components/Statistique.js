@@ -6,45 +6,74 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function Statistique() {
     return (
-        <View style={styles.Statistique}>
-      <View style={styles.TextSta}>
-        <Text>Patient statistics</Text>
+        
+        <View style={styles.statistique}>
+          
         <View style={styles.stat}>
+        <Text style={{fontWeight: '500'}}>Patient statistics</Text>
           {/* Start StatValue */}
             <View style={styles.statValue}>
                 <Text style={styles.value}>12</Text>
                 <View style={styles.percentage}>
-                <Text><AntDesign name="arrowup" size={14} color="green" />11%
-                <Text>today</Text></Text>
+                  <Text><AntDesign name="arrowup" size={14} color="green" />11%
+                  <Text>today</Text></Text>
                 </View>
             </View>
+        </View>
+        <View>
           {/* end StatValue */}
             <Text style={styles.statLabel}>New patients</Text>
-        </View>
-
-        {/* end Stat */}
-        <View style={styles.statValue}>
+            <View style={styles.statValue}>
             <Text style={styles.value}>24</Text>
-            <Ionicons name="stats-chart" size={24} color="black" />
-            <View>
+            
+            <View style={styles.descontainer}>
+              <Ionicons name="stats-chart" size={44} color="black" />
               <Text>
                 Insurance patients
               </Text>
             </View>
-        </View>       
-      </View>
-      </View>
+        </View>
+        </View>
+        </View>
+       
     );
   
 }
 const styles = StyleSheet.create({
-    Statistique:{
+    statistique:{
       backgroundColor:'white',
-      borderRadius: 50,
-      marginTop: 10,
-      display: 'flex',
+      borderRadius: 30,
+      paddingHorizontal: 24,
+      paddingVertical: 40,
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'space-between',
     },
     TextSta:{
-
+      
+    },
+    value:{
+      fontSize:45,
+      fontWeight:'bold',
+      marginBottom:10,
+      justifyContent:'space-between'
+    },
+    stat:{
+      paddingRight: 15,
+    },
+    statValue:{
+      flexDirection: 'row',
+      width: '100%',
+    },
+    statLabel:{
+      fontWeight: '300',
+    },
+    percentage:{
+      paddingVertical: 12,
+    },
+    descontainer:{
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      paddingHorizontal: 12,
     }
   });

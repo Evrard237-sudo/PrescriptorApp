@@ -23,10 +23,12 @@ const styles = StyleSheet.create({
      marginHorizontal:20,
      borderRadius:20,
      backgroundColor:'white',
-     width:330
+     width:330,
+     marginLeft: 10,
     },
     Icon:{
-        paddingLeft:20,
+        paddingLeft:10,
+        paddingTop: 5,
     },
     search:{
         paddingLeft:10,
