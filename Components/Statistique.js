@@ -7,10 +7,10 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Statistique() {
     return (
         
-        <View style={styles.statistique}>
-          
+          <View style={styles.container}>
+            <Text style={{textAlign:'left',fontWeight: '700', marginLeft: 30, marginTop: 30}}>Patients statistique</Text>
+            <View style={styles.statistique}>
         <View style={styles.stat}>
-        <Text style={{fontWeight: '500'}}>Patient statistics</Text>
           {/* Start StatValue */}
             <View style={styles.statValue}>
                 <Text style={styles.value}>12</Text>
@@ -19,32 +19,37 @@ export default function Statistique() {
                   <Text>today</Text></Text>
                 </View>
             </View>
+            <Text style={styles.statLabel}>New patients</Text>
         </View>
         <View>
           {/* end StatValue */}
-            <Text style={styles.statLabel}>New patients</Text>
-            <View style={styles.statValue}>
+            <View style={styles.statValue2}>
             <Text style={styles.value}>24</Text>
             
             <View style={styles.descontainer}>
               <Ionicons name="stats-chart" size={44} color="black" />
-              <Text>
+            </View>
+            
+        </View>
+              <Text style={styles.statLabel}>
                 Insurance patients
               </Text>
-            </View>
         </View>
         </View>
-        </View>
-       
+          </View>
+        
     );
   
 }
 const styles = StyleSheet.create({
+    container:{
+      backgroundColor: 'white',
+      borderRadius: 50,
+    },
     statistique:{
       backgroundColor:'white',
       borderRadius: 30,
       paddingHorizontal: 24,
-      paddingVertical: 40,
       flexDirection: 'row',
       width: '100%',
       justifyContent: 'space-between',
@@ -65,8 +70,14 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       width: '100%',
     },
+    statValue2:{
+      flexDirection: 'row',
+      width: '100%',
+    },
     statLabel:{
       fontWeight: '300',
+      marginTop:1,
+      paddingTop: 1,
     },
     percentage:{
       paddingVertical: 12,
