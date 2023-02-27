@@ -1,33 +1,31 @@
-import React from 'react';
+import {React} from 'react';
 import {StyleSheet,View ,Text,  TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
-
 export default function HomeStart({navigation}) {
-
-    return (
-        <View style={styles.homeStart}>
-        {/* Start Stat */}
-        <View style={styles.stat}>
-          {/* Start StatValue */}
-            <View style={styles.statValue}>
-                <Text style={styles.value}>12</Text>
-                <View style={styles.percentage}>
-                <Text><AntDesign name="arrowup" size={14} color="green" />2%
-                <Text>today</Text></Text>
-                </View>
+  return (
+    <View style={styles.homeStart}>
+    {/* Start Stat */}
+    <View style={styles.stat}>
+      {/* Start StatValue */}
+        <View style={styles.statValue}>
+            <Text style={styles.value}>12</Text>
+            <View style={styles.percentage}>
+            <Text><AntDesign name="arrowup" size={14} color="green" />
+            <Text>2% today</Text></Text>
             </View>
-          {/* end StatValue */}
-            <Text style={styles.statLabel}>Patient appointments</Text>
         </View>
+      {/* end StatValue */}
+        <Text style={styles.statLabel}>Patient appointments</Text>
+    </View>
 
-        {/* end Stat */}
-        
-        <TouchableOpacity style={styles.IconPlus}>
-          <Ionicons name="md-add-circle" size={55} color="black"/>
-        </TouchableOpacity>
-      </View>
+    {/* end Stat */}
+    
+    <TouchableOpacity style={styles.IconPlus}>
+      <Ionicons name="md-add-circle" size={55} color="black" onPress={() => navigation.navigate('AddPrescription')} />
+    </TouchableOpacity>
+  </View>
     );
 }
 const styles = StyleSheet.create({

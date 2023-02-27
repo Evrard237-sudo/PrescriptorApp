@@ -1,13 +1,30 @@
 import React from 'react';
-import { StyleSheet, View, Text,TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, View, Text,TouchableOpacity, Modal, Alert, Pressable, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Cards() {
-  
+  const [modalVisible, setModalVisible] = React.useState(false);
     return (
-          
+        <View style={styles.container}>
             <View style={styles.Card}>
+            <Modal
+              animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() => {
+              Alert.alert('Modal has been closed.');
+              setModalVisible(!modalVisible);
+              }}>
+                <View style={styles.modalView}>
+                    <Pressable style={[styles.button, styles.buttonClose]} onPress={() => setModalVisible(!modalVisible)}>
+                      <AntDesign name="closecircle" size={25} color="black" />
+                    </Pressable>
+                    <Image style={styles.modalImage} source={require('../assets/doctor.jpg')} />
+                    <Text style={styles.modalText}>Lorem ipsum dolor </Text>
+                </View>
+            </Modal>
               <View style={styles.CardHeader1}>
                 <TouchableOpacity style={styles.Icon}>
                   <MaterialCommunityIcons name="pencil-circle" size={35} color="white" />
@@ -21,7 +38,10 @@ export default function Cards() {
                 <View style={styles.CardsAction}>
                   <Text style={styles.CardType}>TEMPLATE</Text>
                   <TouchableOpacity style={styles.IconAct}>
-                    <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                    <Pressable
+                      onPress={() => setModalVisible(!modalVisible)}>
+                        <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                    </Pressable>
                   </TouchableOpacity>
               </View>
             </View>
@@ -43,7 +63,10 @@ export default function Cards() {
             <View style={styles.CardsAction}>
                 <Text style={styles.CardType}>REMINDER</Text>
                 <TouchableOpacity style={styles.IconAct}>
-                <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                <Pressable
+                      onPress={() => setModalVisible(!modalVisible)}>
+                        <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                    </Pressable>
                 </TouchableOpacity>
             </View>
           </View>
@@ -62,15 +85,85 @@ export default function Cards() {
             <View style={styles.CardsAction}>
                 <Text style={styles.CardType}>REMINDER</Text>
                 <TouchableOpacity style={styles.IconAct}>
-                <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                <Pressable
+                      onPress={() => setModalVisible(!modalVisible)}>
+                        <Ionicons name="arrow-forward-circle" size={35} color="black" />
+                    </Pressable>
                 </TouchableOpacity>
             </View>
           </View>
           </View>
- 
+          </View>
     );
 }
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center', 
+    justifyContent: 'center',
+    marginTop:10,
+  },
+  Card: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginVertical: 10,
+    marginHorizontal: 10,
+    padding: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  modalView: {
+    margin: 30,
+    marginTop: '50%',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalImage: {
+    
+  },
+  button: {
+    right: 0,
+    position: 'absolute',
+    top: 0,
+    padding: 20,
+  },
+  CardHeader1: {
+    width: '100%',
+    height: '10%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+  },
+  CardHeader2: {
+    width: '100%',
+    height: '10%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+  },
     Card:{
       justifyContent:'space-between',
       flexDirection:'row', 
