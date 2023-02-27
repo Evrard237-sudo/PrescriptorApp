@@ -3,18 +3,19 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 
-export default function TopBar() {
+export default function TopBar({ navigation }) {
   
     return (
     
     <View style={styles.topbar}>
         {/* start top bar */}
-       <TouchableOpacity style={styles.topbarbutton}>
-            <MaterialIcons name="home-repair-service" size={30} color="black" />
+       <TouchableOpacity style={styles.topbarbutton} onPress={() => navigation.navigate('ListPrescription')}>
+        <FontAwesome name="th-list" size={30} color="black" />
         </TouchableOpacity>
-       <TouchableOpacity style={styles.topbarbutton}>
+       <TouchableOpacity style={styles.topbarbutton} onPress={() => navigation.navigate('Appointment')}>
             <MaterialCommunityIcons name="bell" size={30} color="black" />
        </TouchableOpacity>
        {/* end topbar */}

@@ -21,8 +21,9 @@ export default function Cards() {
                     <Pressable style={[styles.button, styles.buttonClose]} onPress={() => setModalVisible(!modalVisible)}>
                       <AntDesign name="closecircle" size={25} color="black" />
                     </Pressable>
-                    <Image style={styles.modalImage} source={require('../assets/doctor.jpg')} />
+                    <Image style={styles.modalImage} source={{uri: 'https://th.bing.com/th?id=OIP.yHfrnvWGnLHVqYadsmLy-QHaIi&w=232&h=268&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2'}} />
                     <Text style={styles.modalText}>Lorem ipsum dolor </Text>
+                    <Text style={styles.modalText}>Lorem ipsum </Text>
                 </View>
             </Modal>
               <View style={styles.CardHeader1}>
@@ -138,7 +139,10 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   modalImage: {
-    
+    marginTop: 10,
+    width: 290,
+    height: 300,
+    borderRadius: 20,
   },
   button: {
     right: 0,

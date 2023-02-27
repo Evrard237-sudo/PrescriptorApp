@@ -14,7 +14,7 @@ export default function Home({navigation}) {
     <View style={{backgroundColor: '#f2f2f2'}}>
       <StatusBar style='auto' />
       <View style={styles.topBar}>
-        <TopBar />
+        <TopBar navigation={navigation} />
       </View>
       <View style={styles.HomeStart}>
         <HomeStart navigation={navigation} />
